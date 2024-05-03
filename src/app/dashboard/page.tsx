@@ -109,7 +109,10 @@ export default function Dashboard() {
                   <CardTitle>{user.Name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {user.Phone}
+                  {user.Amount}
+                </CardContent>
+                <CardContent>
+                  {user.Message}
                 </CardContent>
               </Card>
               </div>

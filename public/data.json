@@ -1,74 +1,44 @@
 [
     {
         "uid": 1,
-        "Name": "My Package",
-        "Phone": "895-4565",
-        "NationalId": 79556,
-        "Email": "Marketer1@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
-    },
-    {
-        "uid": 1,
-        "Name": "My Package",
-        "Phone": "895-4565",
-        "NationalId": 79556,
-        "Email": "Marketer1@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
-    },
-    {
-        "uid": 1,
-        "Name": "My Package",
-        "Phone": "895-4565",
-        "NationalId": 79556,
-        "Email": "Marketer1@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
+        "Name": "BALANCE",
+        "Amount": "8954565 UGX",
+        "Message": "My current Balance"
     },
     {
         "uid": 2,
-        "Name": "WhatsApp Balance",
-        "Phone": "157-9544",
-        "NationalId": 79556,
-        "Email": "Marketer2@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
+        "Name": "WHATSAPP",
+        "Amount": "895-4565 UGX",
+        "Message": "My Whatsapp Balance"
+    },
+    {
+        "uid": 3,
+        "Name": "WITHDRAWN",
+        "Amount": "895-4565 UGX",
+        "Message": "My Withdrawn Amount"
     },
     {
         "uid": 4,
-        "Name": "Cashback Balance",
-        "Phone": "156-25479",
-        "NationalId": 79556,
-        "Email": "Marketer4@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
+        "Name": "MY CASHBACK",
+        "Amount": "157-9544 UGX",
+        "Message": "My cashback is redeemable "
     },
     {
-        "uid": 4,
-        "Name": "Affiliate Balance",
-        "Phone": "000-2567",
-        "NationalId": 79556,
-        "Email": "Marketer5@gmail.com",
-        "PassportImage": "marketer.jpg",
-        "Joined": "2024-03-19",
-        "ActiveProject": 3,
-        "InactiveProject": 1,
-        "TotalProject": 4
+        "uid": 5,
+        "Name": "YOUTUBE",
+        "Amount": "156-25479 UGX",
+        "Message": "My youtube balance"
+    },
+    {
+        "uid": 6,
+        "Name": "AFFILIATE",
+        "Amount": "000-2567 UGX",
+        "Message": "Overview of refferal Earnings"
+    },
+    {
+        "uid": 7,
+        "Name": "DEPOSIT",
+        "Amount": "000-2567 UGX",
+        "Message": "My Current Deposit Balance"
     }
 ]
