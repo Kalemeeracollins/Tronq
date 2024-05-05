@@ -9,7 +9,7 @@ import { CardContent, Card } from "@/components/ui/card"
 export default function Component() {
   return (
     <div className="relative h-screen">
-      <BackgroundVideo video="/signInBg.mp4" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+      <BackgroundVideo video="/signInBg.mp4" />
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-white text-center">
       <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg dark:bg-[#1f1f1f]">
@@ -41,9 +41,7 @@ export default function Component() {
               </Link>
             <div className="flex justify-between items-center">
               <Button className="relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:focus:ring-indigo-600" type="submit">
-                <Link href="/" >
-              Sign In
-            </Link>
+                Sign in
               </Button>
             </div>
             <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
