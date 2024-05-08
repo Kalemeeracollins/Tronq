@@ -15,9 +15,9 @@ export default function Component() {
       <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg dark:bg-[#1f1f1f]">
         <div className="flex-1 space-y-6">
           <div className="mb-6 text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign in</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign Up</h1>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to access your account.
+              Create an account using your email to access our services.
             </p>
           </div>
           <form className="space-y-4">
@@ -25,9 +25,21 @@ export default function Component() {
               <Label htmlFor="email">Email</Label>
               <Input id="email" placeholder="name@example.com" required type="email" />
             </div>
+            <div>
+              <Label htmlFor="text">Username</Label>
+              <Input id="username" placeholder="Enter your UserName" required type="text" />
+            </div>
             <div className="relative">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" required type="password" />
+              <Input id="password" placeholder="Enter your password" required type="password" />
+              <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
+                <EyeIcon className="h-4 w-4" />
+                <span className="sr-only">Toggle password visibility</span>
+              </Button>
+            </div>
+            <div className="relative">
+              <Label htmlFor="password">Confirm Password</Label>
+              <Input id="password" placeholder="Confirm your Password" required type="password" />
               <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
                 <EyeIcon className="h-4 w-4" />
                 <span className="sr-only">Toggle password visibility</span>
@@ -53,9 +65,9 @@ export default function Component() {
             </Link>
             <Link
               className="font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-              href="/signUp"
+              href="/signIn"
             >
-              Sign Up
+              Sign In
             </Link>
           </div>
           </form>

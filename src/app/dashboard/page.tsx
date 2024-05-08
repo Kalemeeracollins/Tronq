@@ -7,7 +7,7 @@ import { CardTitle, CardHeader, CardContent, Card, CardDescription } from "@/com
 import { AvatarImage, Avatar } from "@/components/ui/avatar";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select";
 import React, { useState, useEffect } from 'react';
-import NavBar from "../../components/component/Header"
+import NavBar from "../../components/component/dashboardHeader"
 import './style.css';
 
 export default function Dashboard() {
@@ -53,44 +53,86 @@ export default function Dashboard() {
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-64 rounded-xl flex flex-col bg-gray-200 max-h-screen " style={{ background: 'linear-gradient(to left, #83f5e5, #ffed00)' }}>
           <nav className={`flex  flex-col ml-4 space-y-2 ${isMenuOpen ? 'block' : 'hidden'} lg:block`}>
-            <Link className="flex items-center space-x-2 mt-4 text-blue-600" href="#" passHref>
-              <HomeIcon className="text-blue-600" />
-              <span>Home</span>
-            </Link>
-            <Link className="flex items-center space-x-2 text-gray-700 relative" href="#" passHref>
-              <BellIcon className="text-gray-700" />
-              <span>Notifications</span>
-              <Badge className="absolute top-0 right-0" variant="secondary">
-                2 new
-              </Badge>
-            </Link>
-            <Link className="flex items-center space-x-2 " href="#" passHref>
-              Pre-Published
-            </Link>
-            <Link className="flex items-center space-x-2" href="#" passHref>
-              Published
-            </Link>
-            <Link className="flex items-center space-x-2" href="#" passHref>
-              Content Library
-            </Link>
-            <Link className="flex items-center space-x-2" href="#" passHref>
-              Insights
-            </Link>
-            <Link className="flex items-center space-x-2" href="#">
-              Inbox+
-            </Link>
-            <Link className="flex items-center space-x-2" href="#">
-              Monetization
-            </Link>
-            <Link className="flex items-center space-x-2" href="#">
-              Creative Tools
-            </Link>
-            <Link className="flex items-center space-x-2" href="#">
-              Settings
-            </Link>
-            <Link className="flex items-center space-x-2" href="#">
-              Resources
-            </Link>
+            <Link className="flex items-center space-x-2  pt-4" href="/" passHref>
+         <img
+                     src="house.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Home</span>
+        </Link>
+
+        <Link className="flex items-center space-x-2  relative pt-2" href="/dashboard" passHref>
+          <img
+                     src="dashboard.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Dashboard</span>
+        </Link>
+
+        <Link className="flex items-center space-x-2  relative pt-2" href="/transactions" passHref>
+          <img
+                     src="transaction.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Transactions</span>
+        </Link>
+
+        <Link className="flex items-center space-x-2  relative pt-2" href="/whatsapp" passHref>
+          <img
+                     src="https://img.icons8.com/ios/100/whatsapp--v1.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Whatsapp</span>
+        </Link>
+
+        <Link className="flex items-center space-x-2  relative pt-2" href="/youtube" passHref>
+          <img
+                     src="https://img.icons8.com/color/48/youtube-play.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Youtube</span>
+        </Link>
+
+        <Link className="flex items-center space-x-2  relative pt-2" href="/marketStore" passHref>
+          <img
+                     src="marketstore.png"
+                     alt="Image"
+                     className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+          <span>Market Store</span>
+        </Link>
+        {/* Add other links similarly */}
+
+          <Link className="flex items-center space-x-2  relative pt-2" href="/customer-care" passHref>
+            <img
+                     src="customercare.png"
+                     alt="Image"
+                     className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+            <span>Customer Care</span>
+          </Link>
+          <div className="mx-8"></div> {/* Add space between the links */}
+          <Link className="flex items-center space-x-2  relative pt-44" href="/logout" passHref>
+            <img
+                     src="logout.png"
+                     alt="Image"
+                     className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+                     variant="outline"
+                  />
+            <span>LogOut</span>
+          </Link>
           </nav>
         </div>
         <div className="flex-1 lg:ml-8">
