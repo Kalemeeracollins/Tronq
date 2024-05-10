@@ -10,20 +10,20 @@ export default function Component() {
   return (
     <div className="relative h-screen">
       <BackgroundVideo video="/signInBg.mp4" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-      <div className="absolute inset-0 flex items-center justify-center z-10">
+      <div className=" absolute inset-0 flex items-center justify-center z-10">
         <div className="text-white text-center">
-      <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg dark:bg-[#1f1f1f]">
+      <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg bg-blue-500 bg-opacity-50 p-4">
         <div className="flex-1 space-y-6">
           <div className="mb-6 text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign in</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign In</h1>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
               Enter your email and password to access your account.
             </p>
           </div>
           <form className="space-y-4">
             <div>
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" placeholder="name@example.com" required type="email" />
+              <Label htmlFor="username">Email</Label>
+              <Input id="eusername" placeholder="name@example.com" required type="text" />
             </div>
             <div className="relative">
               <Label htmlFor="password">Password</Label>

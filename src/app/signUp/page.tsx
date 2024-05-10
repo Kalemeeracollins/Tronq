@@ -12,7 +12,7 @@ export default function Component() {
       <BackgroundVideo video="/signInBg.mp4" />
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-white text-center">
-      <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg dark:bg-[#1f1f1f]">
+      <div className="flex w-full max-w-4xl items-center rounded-lg bg-white p-8 shadow-lg bg-blue-500 bg-opacity-50 p-4">
         <div className="flex-1 space-y-6">
           <div className="mb-6 text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign Up</h1>
@@ -29,6 +29,7 @@ export default function Component() {
               <Label htmlFor="text">Username</Label>
               <Input id="username" placeholder="Enter your UserName" required type="text" />
             </div>
+            
             <div className="relative">
               <Label htmlFor="password">Password</Label>
               <Input id="password" placeholder="Enter your password" required type="password" />
@@ -53,7 +54,7 @@ export default function Component() {
               </Link>
             <div className="flex justify-between items-center">
               <Button className="relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:focus:ring-indigo-600" type="submit">
-                Sign in
+                Create Account
               </Button>
             </div>
             <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">

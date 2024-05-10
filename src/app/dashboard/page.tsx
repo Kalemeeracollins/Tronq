@@ -196,23 +196,101 @@ export default function Dashboard() {
                 </CardHeader>
                 <CardContent>
             <div className="flex flex-col items-center justify-center space-y-4 max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-green-300 custom-scrollbar">
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                    <li>You have successfull paid 5000</li>
-                  </div>
+             //Transactions
+              <section className="flex flex-col gap-6 p-4 md:p-6">
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <CircleCheckIcon className="h-6 w-6 text-green-500 dark:text-green-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Deposit</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                Completed
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 1, 2023</p>
+            <p className="font-medium text-lg mt-2">$49.99</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <ClockIcon className="h-6 w-6 text-yellow-500 dark:text-yellow-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Withdraw</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                Pending
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 3, 2023</p>
+            <p className="font-medium text-lg mt-2">$99.99</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <CircleXIcon className="h-6 w-6 text-red-500 dark:text-red-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Transfer</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                Failed
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 5, 2023</p>
+            <p className="font-medium text-lg mt-2">$29.99</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <CircleCheckIcon className="h-6 w-6 text-green-500 dark:text-green-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Withdraw</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                Completed
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 7, 2023</p>
+            <p className="font-medium text-lg mt-2">$79.99</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <ClockIcon className="h-6 w-6 text-yellow-500 dark:text-yellow-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Transfer</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                Pending
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 10, 2023</p>
+            <p className="font-medium text-lg mt-2">$59.99</p>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
+        <div className="p-4 flex items-center gap-4">
+          <CircleXIcon className="h-6 w-6 text-red-500 dark:text-red-400" />
+          <div className="flex-1">
+            <div className="flex items-center justify-between">
+              <p className="font-medium">Deposit</p>
+              <span className="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                Failed
+              </span>
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">June 12, 2023</p>
+            <p className="font-medium text-lg mt-2">$39.99</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+            </div>
                 </CardContent>
               </Card>
               <Card style={{ background: 'linear-gradient(to left, #83f5e5, #ffed00)' }}>
@@ -414,6 +492,69 @@ function YoutubeIcon(props) {
     >
       <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
       <path d="m10 15 5-3-5-3z" />
+    </svg>
+  )
+}
+
+function CircleCheckIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  )
+}
+
+
+function CircleXIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m15 9-6 6" />
+      <path d="m9 9 6 6" />
+    </svg>
+  )
+}
+
+
+function ClockIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
     </svg>
   )
 }
