@@ -89,25 +89,70 @@ function Transctions() {
       </div>
     </div>
     <Modal isOpen={isDepositModalOpen} onClose={closeDepositModal}>
-        <h1>Deposit Modal</h1>
-        <p>This is where your deposit content goes.</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={closeDepositModal}>
-          Close
-        </button>
+       <div className="flex flex-col space-y-4">
+      <label htmlFor="email" className="text-lg font-semibold">Email</label>
+      <input
+        type="text"
+        id="email"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your Email"
+      />
+
+      <label className="text-lg font-semibold">Password</label>
+      <input
+        type="number"
+        id="amount"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your Amount"
+      />
+      <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+    Deposit
+  </button>
+    </div>
       </Modal>
       <Modal isOpen={isTransferModalOpen} onClose={closeTransferModal}>
-        <h1>Transfer Modal</h1>
-        <p>This is where your transfer content goes.</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={closeTransferModal}>
-          Close
-        </button>
+        <div className="flex flex-col space-y-4">
+      <label htmlFor="username" className="text-lg font-semibold">Username</label>
+      <input
+        type="text"
+        id="username"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your username"
+      />
+
+      <label className="text-lg font-semibold">Password</label>
+      <input
+        type="number"
+        id="amount"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your Amount"
+      />
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+    Transfer Now
+  </button>
+    </div>
       </Modal>
       <Modal isOpen={isWithdrawModalOpen} onClose={closeWithdrawModal}>
-        <h1>Withdraw Modal</h1>
-        <p>This is where your withdraw content goes.</p>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={closeWithdrawModal}>
-          Close
-        </button>
+        <div className="flex flex-col space-y-4">
+      <label htmlFor="phone" className="text-lg font-semibold">Phone</label>
+      <input
+        type="number"
+        id="phone"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your phone"
+      />
+
+      <label className="text-lg font-semibold">Password</label>
+      <input
+        type="number"
+        id="amount"
+        className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+        placeholder="Enter your Amount"
+      />
+      <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+    Withdraw
+  </button>
+    </div>
       </Modal>
 </>
   );
