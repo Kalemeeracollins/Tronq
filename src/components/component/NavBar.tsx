@@ -26,7 +26,7 @@ export default function NavBar() {
       <header className="flex items-center justify-between px-6 py-4 text-white shadow-lg dark:bg-gray-800" style={{ background: 'linear-gradient(to left, #FFD700, #FFA500)' }}>
         <div className="flex items-center gap-4">
           <Avatar className="h-12 w-12">
-            <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
+            <AvatarImage alt="@shadcn" src="/profile.jpeg" />
             <AvatarFallback>JP</AvatarFallback>
           </Avatar>
           <div className="grid gap-1">
@@ -53,9 +53,10 @@ export default function NavBar() {
             <p className="text-sm text-gray-200">Good morning,</p>
             <h4 className="text-lg font-semibold">Jared</h4>
           </div>
-          <Button className="text-white hover:bg-white hover:text-[#4c51bf]" variant="outline">
-            Edit Profile
-          </Button>
+          <Avatar className="h-12 w-12">
+            <AvatarImage alt="@shadcn" src="/logo.jpg" />
+            <AvatarFallback>JP</AvatarFallback>
+          </Avatar>
           <Button className="text-white hover:bg-white/20" variant="ghost">
             <div className="items-center">
             <button onClick={openModal} className="p-2">
@@ -75,6 +76,16 @@ export default function NavBar() {
           </Button>
         </div>
         <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Link href="#" passHref>
+          <div className="flex items-center">
+            <img src='logo.jpg' 
+            alt="Image"
+            className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
+            variant="outline"
+            />
+            <h2 className="ml-2">Tronq</h2>
+          </div>
+        </Link>
         <div className="ml-16">
         <Link className={`flex items-center space-x-2 ${isActiveLink('/') ? 'text-blue-600' : 'text-gray-700'} pt-4`} href="/" passHref>
          <img

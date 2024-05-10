@@ -44,7 +44,11 @@ export default function NavBar() {
 
         <Link href="#" passHref>
           <div className="mr-6 flex items-center">
-            <MountainIcon className="h-6 w-6" />
+            <img src='logo.jpg' 
+            alt="Image"
+            className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
+            variant="outline"
+            />
             <h2 className="ml-2">Tronq</h2>
           </div>
         </Link>
