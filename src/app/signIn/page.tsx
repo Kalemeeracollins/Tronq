@@ -78,11 +78,11 @@ export default function SignIn() {
           <form className="space-y-4">
             <div>
               <Label htmlFor="username">UserName</Label>
-              <Input id="eusername" placeholder="name@example.com" required type="text" onChange={(e) => setUserName(e.target.value)} />
+              <Input id="eusername" className="text-black"  placeholder="name@example.com" required type="text" onChange={(e) => setUserName(e.target.value)} />
             </div>
             <div className="relative">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" required type="password" onChange={(e) => setPassword(e.target.value)} />
+              <Input className="text-black"  id="password" required type="password" onChange={(e) => setPassword(e.target.value)} />
               <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
                 <EyeIcon className="h-4 w-4" />
                 <span className="sr-only">Toggle password visibility</span>
