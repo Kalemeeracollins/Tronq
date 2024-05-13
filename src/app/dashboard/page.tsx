@@ -33,7 +33,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
   const [displayedText, setDisplayedText] = useState("");
   const fullText = "Welcome to your professional dashboard for Tronq Agenicies";
-  const typingSpeed = 100; // Adjust typing speed as needed
+  const typingSpeed = 100;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -278,7 +278,6 @@ export default function Dashboard() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-col items-center justify-center space-y-4 max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-green-300 custom-scrollbar">
-                      //Transactions
                       <section className="flex flex-col gap-6 p-4 md:p-6">
                         <div className="bg-white rounded-lg shadow-md dark:bg-gray-950 dark:text-gray-50">
                           <div className="p-4 flex items-center gap-4">
