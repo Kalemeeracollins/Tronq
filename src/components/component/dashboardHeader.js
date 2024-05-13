@@ -1,7 +1,8 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Modal from './Modal';
+import Modal from './modal';
+import Image from "next/image"
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 // import { SettingsIcon, MountainIcon, BellIcon, HomeIcon } from './Icons';
@@ -44,8 +45,10 @@ export default function NavBar() {
 
         <Link href="#" passHref>
           <div className="mr-6 flex items-center">
-            <img src='logo.jpg' 
+            <Image src='/logo.jpg' 
             alt="Image"
+            height={100}
+            width={100}
             className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
             variant="outline"
             />
@@ -67,9 +70,11 @@ export default function NavBar() {
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className="ml-16">
         <Link className={`flex items-center space-x-2 ${isActiveLink('/') ? 'text-blue-600' : 'text-gray-700'} pt-4`} href="/" passHref>
-         <img
-                     src="house.png"
+         <Image
+                     src="/house.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -77,9 +82,11 @@ export default function NavBar() {
         </Link>
 
         <Link className={`flex items-center space-x-2 ${isActiveLink('/transactions') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/dashboard" passHref>
-          <img
-                     src="dashboard.png"
+          <Image
+                     src="/dashboard.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -87,9 +94,11 @@ export default function NavBar() {
         </Link>
 
         <Link className={`flex items-center space-x-2 ${isActiveLink('/transactions') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/transactions" passHref>
-          <img
-                     src="transaction.png"
+          <Image
+                     src="/transaction.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -97,9 +106,11 @@ export default function NavBar() {
         </Link>
 
         <Link className={`flex items-center space-x-2 ${isActiveLink('/whatsapp') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/whatsapp" passHref>
-          <img
+          <Image
                      src="https://img.icons8.com/ios/100/whatsapp--v1.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -107,9 +118,11 @@ export default function NavBar() {
         </Link>
 
         <Link className={`flex items-center space-x-2 ${isActiveLink('/youtube') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/youtube" passHref>
-          <img
+          <Image
                      src="https://img.icons8.com/color/48/youtube-play.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -117,9 +130,11 @@ export default function NavBar() {
         </Link>
 
         <Link className={`flex items-center space-x-2 ${isActiveLink('/transactions') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/marketStore" passHref>
-          <img
-                     src="marketstore.png"
+          <Image
+                     src="/marketstore.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -130,9 +145,11 @@ export default function NavBar() {
 
         <div className="flex">
           <Link className={`flex items-center space-x-2 ${isActiveLink('/customer-care') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/customer-care" passHref>
-            <img
-                     src="customercare.png"
+            <Image
+                     src="/customercare.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />
@@ -140,9 +157,11 @@ export default function NavBar() {
           </Link>
           <div className="mx-8"></div> {/* Add space between the links */}
           <Link className={`flex items-center space-x-2 ${isActiveLink('/logout') ? 'text-blue-600' : 'text-gray-700'} relative pt-2`} href="/logout" passHref>
-            <img
-                     src="logout.png"
+            <Image
+                     src="/logout.png"
                      alt="Image"
+                     height={100}
+                     width={100}
                      className=" h-8 w-8 text-[#0284C7] dark:text-[#CBD5E1]"
                      variant="outline"
                   />

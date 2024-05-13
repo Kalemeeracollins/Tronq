@@ -1,9 +1,9 @@
 // In your JSX file
-
-import React from 'react';
-import NavBar from '../../components/component/NavBar';
-import Link from 'next/link';
-import { CardContent, Card } from '@/components/ui/card';
+import { Button } from "@/components/ui/Button";
+import React from "react";
+import NavBar from "../../components/component/NavBar";
+import Link from "next/link";
+import { CardContent, Card } from "@/components/ui/card";
 
 function Whatsapp() {
   return (
@@ -30,7 +30,7 @@ export default Whatsapp;
 // CardWrapper component to wrap each card
 const CardWrapper = () => {
   return (
-          <div className="flex flex-col items-start justify-between rounded-lg border">
+    <div className="flex flex-col items-start justify-between rounded-lg border">
       <Card className="w-full max-w-md shadow-md">
         <h1 className="bg-red-500 pt-2 pb-2 text-center">MINI-STELLAR</h1>
         <CardContent className="grid gap-4 p-6">
@@ -41,9 +41,9 @@ const CardWrapper = () => {
             <p>35 per View for 14 days</p>
           </div>
           <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <Button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Request Package
-            </button>
+            </Button>
           </div>
         </CardContent>
       </Card>
