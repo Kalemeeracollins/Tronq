@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { CardTitle, CardHeader, CardContent, Card, CardDescription } from "@/components/ui/card";
-import { AvatarImage, Avatar } from "@/components/ui/avatar";
+import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select";
 import React, { useState, useEffect } from 'react';
 import NavBar from "../../components/component/dashboardHeader"
@@ -158,9 +158,10 @@ export default function Dashboard() {
                   <div className="flex flex-col space-y-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Avatar>
-                          <AvatarImage alt="Profile picture" src="/man.jpeg" />
-                        </Avatar>
+                        <Avatar className="h-12 w-12">
+            <AvatarImage alt="@shadcn" src="/profile.jpeg" />
+            <AvatarFallback>JP</AvatarFallback>
+          </Avatar>
                         <span>Username</span>
                       </div>
                       <Button variant="secondary">Invitation</Button>
