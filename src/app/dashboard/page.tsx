@@ -8,9 +8,14 @@ import { AvatarImage, Avatar } from "@/components/ui/avatar";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select";
 import React, { useState, useEffect } from 'react';
 import NavBar from "../../components/component/dashboardHeader"
+import Layout from "../../components/component/Layout"
 import './style.css';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
+import CopyButton from '../../components/component/copyBtn';
 
 export default function Dashboard() {
+    const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [users, setUsers] = useState([]);
   const [displayedText, setDisplayedText] = useState('');
@@ -47,7 +52,14 @@ export default function Dashboard() {
 
     return () => clearInterval(typingInterval);
   }, []);
+
+  const handleLogout = () => {
+    Cookies.remove('sessionToken');
+    router.push('/signIn');
+  };
+
   return (
+    <Layout>
     <div className="min-h-screen  bg-gray-100 p-1" style={{ backgroundImage: "url('/dashboardbackground.jpg')" }}>
        <NavBar/>
       <div className="flex flex-col lg:flex-row">
@@ -124,7 +136,7 @@ export default function Dashboard() {
             <span>Customer Care</span>
           </Link>
           <div className="mx-8"></div> {/* Add space between the links */}
-          <Link className="flex items-center space-x-2  relative pt-44" href="/logout" passHref>
+          <button onClick={handleLogout} className="flex items-center space-x-2  relative pt-44" href="/logout" passHref>
             <img
                      src="logout.png"
                      alt="Image"
@@ -132,7 +144,7 @@ export default function Dashboard() {
                      variant="outline"
                   />
             <span>LogOut</span>
-          </Link>
+          </button>
           </nav>
         </div>
         <div className="flex-1 lg:ml-8">
@@ -147,7 +159,7 @@ export default function Dashboard() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <Avatar>
-                          <AvatarImage alt="Profile picture" src="/avatar.png?height=40&width=40" />
+                          <AvatarImage alt="Profile picture" src="/man.jpeg" />
                         </Avatar>
                         <span>Username</span>
                       </div>
@@ -155,7 +167,7 @@ export default function Dashboard() {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <span>Invitation Link</span>
+                         <CopyButton />
                       </div>
                       <Button variant="secondary">Go to Overview</Button>
                     </div>
@@ -327,6 +339,7 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    </Layout>
   );
 }
 

@@ -1,4 +1,7 @@
 "use client"
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 import BackgroundVideo from '../../components/component/BackgroundVideo';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -6,7 +9,62 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { CardContent, Card } from "@/components/ui/card"
 
-export default function Component() {
+export default function signUp() {
+  const router = useRouter();
+
+  const [formData, setFormData] = useState({
+    email: '',
+    username: '',
+    country_code: '254',
+    phone: '',
+    password: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Add validation logic here if needed
+
+    try {
+      const response = await fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        // Data sent successfully
+        console.log('User signed up successfully');
+
+        // Generate token (you may use a library like uuid)
+        const token = Math.random().toString(36).substr(2);
+
+        // Set token in a cookie
+        Cookies.set('token', token);
+
+        // Redirect to dashboard
+        router.push('/dashboard');
+      } else {
+        // Handle error response
+        console.error('Failed to sign up:', response.statusText);
+        // You can show an error message to the user
+      }
+    } catch (error) {
+      console.error('Error occurred:', error);
+      // Handle network errors or other exceptions
+    }
+  };
+
+
   return (
     <div className="relative h-screen text-white">
       <BackgroundVideo video="/signInBg.mp4" />
@@ -20,35 +78,77 @@ export default function Component() {
                   Create an account using your email to access our services.
                 </p>
               </div>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" className="text-black" placeholder="name@example.com" required type="email" />
-                </div>
-                <div>
-                  <Label htmlFor="text">Username</Label>
-                  <Input id="username" className="text-black" placeholder="Enter your UserName" required type="text" />
-                </div>
-                <div className="flex items-center">
-                  <div className="mr-4">
-                    <Label htmlFor="country_code">Country Code</Label>
-                    <select id="country_code" name="country_code" className="block w-full py-2 text-black px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                      <option value="+254">+254 (Kenya)</option>
-                      <option value="+255">+255 (Tanzania)</option>
-                      <option value="+256">+256 (Uganda)</option>
-                      <option value="+250">+250 (Rwanda)</option>
-                      <option value="+257">+257 (Burundi)</option>
-                      <option value="+211">+211 (South Sudan)</option>
-                    </select>
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input id="phone" name="phone" type="tel" placeholder="Enter phone number" required className="text-black text-black block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
-                  </div>
-                </div>
-                <div className="relative">
-                  <Label htmlFor="password">Password</Label>
-                  <Input id="password" className="text-black" placeholder="Enter your password" required type="password" />
+                  <Input 
+      id="email" 
+      className="text-black" 
+      placeholder="name@example.com" 
+      required 
+      type="email" 
+      name="email" 
+      value={formData.email}
+      onChange={handleChange} 
+    />
+  </div>
+  <div>
+    <Label htmlFor="username">Username</Label>
+    <Input 
+      id="username" 
+      className="text-black" 
+      placeholder="Enter your UserName" 
+      required 
+      type="text" 
+      name="username" 
+      value={formData.username}
+      onChange={handleChange} 
+    />
+  </div>
+  <div className="flex items-center">
+    <div className="mr-4">
+          <Label htmlFor="country_code">Country Code</Label>
+          <select 
+            id="country_code" 
+            name="country_code" 
+            className="block w-full py-2 text-black px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            value={formData.country_code} 
+            onChange={handleChange}
+          >
+            <option value="+254">+254 (Kenya)</option>
+            <option value="+255">+255 (Tanzania)</option>
+            <option value="+256">+256 (Uganda)</option>
+            <option value="+250">+250 (Rwanda)</option>
+            <option value="+257">+257 (Burundi)</option>
+            <option value="+211">+211 (South Sudan)</option>
+          </select>
+        </div>
+    <div>
+      <Label htmlFor="phone">Phone Number</Label>
+      <Input 
+        id="phone" 
+        name="phone" 
+        type="tel" 
+        placeholder="Enter phone number" 
+        required 
+        className="text-black text-black block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" 
+        value={formData.phone}
+        onChange={handleChange} 
+      />
+    </div>
+  </div>
+  <div className="relative">
+    <Label htmlFor="password">Password</Label>
+    <Input 
+      id="password" 
+      className="text-black" 
+      placeholder="Enter your password" 
+      required 
+      type="password" 
+      name="password" 
+      value={formData.password}
+      onChange={handleChange} 
+    />
                   <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
                     <EyeIcon className="h-4 w-4" />
                     <span className="sr-only">Toggle password visibility</span>
@@ -56,7 +156,7 @@ export default function Component() {
                 </div>
                 <div className="relative">
                   <Label htmlFor="password">Confirm Password</Label>
-                  <Input id="password" className="text-black" placeholder="Confirm your Password" required type="password" />
+                  <Input id="confirm_password" className="text-black" placeholder="Confirm your Password" required type="password" />
                   <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
                     <EyeIcon className="h-4 w-4" />
                     <span className="sr-only">Toggle password visibility</span>

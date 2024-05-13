@@ -10,15 +10,7 @@ function Whatsapp() {
     <>
       <NavBar />
       <div className="border-b-2 border-gray-200 shadow-md mt-4">
-        <div className="flex justify-between flex">
-          <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 ml-16">
-            Download
-          </button>
-          <button className="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 mr-16">
-            Upload
-          </button>
-        </div>
-        <h1 className="text-blue-500 text-2xl text-center">Market-Store</h1>
+        <h1 className="m-4 text-blue-500 text-2xl text-center">Market-Store</h1>
       </div>
       <section className="w-full py-4 md:py-4 lg:py-4">
         <div className="container flex flex-wrap justify-center gap-6 px-4 md:justify-start">

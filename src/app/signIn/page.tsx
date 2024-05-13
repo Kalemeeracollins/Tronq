@@ -1,12 +1,67 @@
 "use client"
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import BackgroundVideo from '../../components/component/BackgroundVideo';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
-import { CardContent, Card } from "@/components/ui/card"
 
-export default function Component() {
+export default function SignIn() {
+
+ const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const baseUrl = "http://localhost:3000/users";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Set loading state when form is submitted
+
+    try {
+      const response = await fetch(baseUrl);
+      const users = await response.json();
+
+      const existingUser = users.find(user => user.userName === userName);
+
+      if (existingUser) {
+        if (existingUser.password === password) {
+          const sessionToken = 'your-session-token';
+          Cookies.set('sessionToken', sessionToken, { expires: 1, path: '/' });
+          setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+          }, 5000);
+          router.push('/dashboard');
+        } else {
+          setError('Incorrect username or password'); // More specific error message
+        }
+      } else {
+        setError('Account not found'); // More specific error message
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setError('An error occurred while logging in');
+    } finally {
+      setLoading(false); // Reset loading state after form submission
+    }
+  };
+
+  // Use effect to clear error and success messages after a certain time
+  useEffect(() => {
+    let timeout;
+    if (error || success) {
+      timeout = setTimeout(() => {
+        setError('');
+        setSuccess(false);
+      }, 5000);
+    }
+    return () => clearTimeout(timeout);
+  }, [error, success]);
+
   return (
     <div className="relative h-screen">
       <BackgroundVideo video="/signInBg.mp4" className="min-w-full min-h-full w-auto h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
@@ -17,17 +72,17 @@ export default function Component() {
           <div className="mb-6 text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Sign In</h1>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to access your account.
+              Enter your UserName and password to access your account.
             </p>
           </div>
           <form className="space-y-4">
             <div>
-              <Label htmlFor="username">Email</Label>
-              <Input id="eusername" placeholder="name@example.com" required type="text" />
+              <Label htmlFor="username">UserName</Label>
+              <Input id="eusername" placeholder="name@example.com" required type="text" onChange={(e) => setUserName(e.target.value)} />
             </div>
             <div className="relative">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" required type="password" />
+              <Input id="password" required type="password" onChange={(e) => setPassword(e.target.value)} />
               <Button className="absolute bottom-1 right-1 h-7 w-7" size="icon" variant="ghost">
                 <EyeIcon className="h-4 w-4" />
                 <span className="sr-only">Toggle password visibility</span>

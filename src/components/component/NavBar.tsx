@@ -53,10 +53,6 @@ export default function NavBar() {
             <p className="text-sm text-gray-200">Good morning,</p>
             <h4 className="text-lg font-semibold">Jared</h4>
           </div>
-          <Avatar className="h-12 w-12">
-            <AvatarImage alt="@shadcn" src="/logo.jpg" />
-            <AvatarFallback>JP</AvatarFallback>
-          </Avatar>
           <Button className="text-white hover:bg-white/20" variant="ghost">
             <div className="items-center">
             <button onClick={openModal} className="p-2">
@@ -75,17 +71,7 @@ export default function NavBar() {
             <span className="sr-only">Settings</span>
           </Button>
         </div>
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <Link href="#" passHref>
-          <div className="flex items-center">
-            <img src='logo.jpg' 
-            alt="Image"
-            className=" h-10 w-10 text-[#0284C7] dark:text-[#CBD5E1]"
-            variant="outline"
-            />
-            <h2 className="ml-2">Tronq</h2>
-          </div>
-        </Link>
+        <Modal isOpen={isModalOpen} onClose={closeModal} className="mr-4">
         <div className="ml-16">
         <Link className={`flex items-center space-x-2 ${isActiveLink('/') ? 'text-blue-600' : 'text-gray-700'} pt-4`} href="/" passHref>
          <img
