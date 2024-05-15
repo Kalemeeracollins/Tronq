@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import BackgroundVideo from "../../components/component/BackgroundVideo";
 import { Button } from "@/components/ui/Button";
@@ -10,8 +10,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { CardContent, Card } from "@/components/ui/card";
 
-export default function signUp() {
-  const router = useRouter();
+export default function SignUp() {
+  // const router = useRouter();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -53,7 +53,7 @@ export default function signUp() {
         Cookies.set("token", token);
 
         // Redirect to dashboard
-        router.push("/dashboard");
+        // router.push("/dashboard");
       } else {
         // Handle error response
         console.error("Failed to sign up:", response.statusText);
