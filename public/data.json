@@ -1,6 +1,6 @@
 [
     {
-        "uid": 1,
+        "id": 1,
         "Name": "BALANCE",
         "Amount": "8954565 UGX",
         "Message": "My current Balance",
@@ -8,7 +8,7 @@
         "backgroundColor": "linear-gradient(to left, #ff0f7b, #f89b29)"
     },
     {
-        "uid": 2,
+        "id": 2,
         "Name": "WHATSAPP",
         "Amount": "895-4565 UGX",
         "Message": "My Whatsapp Balance",
@@ -16,7 +16,7 @@
         "backgroundColor": "linear-gradient(to left, #EA8D8D, #A890FE)"
     },
     {
-        "uid": 3,
+        "id": 3,
         "Name": "WITHDRAWN",
         "Amount": "895-4565 UGX",
         "Message": "My Withdrawn Amount",
@@ -24,7 +24,7 @@
         "backgroundColor": "linear-gradient(to left, #FF61D2, #FE9090)"
     },
     {
-        "uid": 4,
+        "id": 4,
         "Name": "MY CASHBACK",
         "Amount": "157-9544 UGX",
         "Message": "My cashback is redeemable ",
@@ -32,7 +32,7 @@
         "backgroundColor": "linear-gradient(to left, #C6EA8D, #FE90AF)"
     },
     {
-        "uid": 5,
+        "id": 5,
         "Name": "YOUTUBE",
         "Amount": "156-25479 UGX",
         "Message": "My youtube balance",
@@ -40,7 +40,7 @@
         "backgroundColor": "linear-gradient(to left, #662D8C, #ED1E79)"
     },
     {
-        "uid": 6,
+        "id": 6,
         "Name": "AFFILIATE",
         "Amount": "000-2567 UGX",
         "Message": "Overview of refferal Earnings",
@@ -48,7 +48,7 @@
         "backgroundColor": "linear-gradient(to left, #FF5F6D, #FFC371)"
     },
     {
-        "uid": 7,
+        "id": 7,
         "Name": "DEPOSIT",
         "Amount": "000-2567 UGX",
         "Message": "My Current Deposit Balance",

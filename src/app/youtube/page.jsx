@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import NavBar from "../../components/component/NavBar";
 import { CardContent, Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 function Whatsapp() {
   const [isVideoVisible, setIsVideoVisible] = useState(false);

@@ -1,5 +1,5 @@
 // In your JSX file
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import React from "react";
 import NavBar from "../../components/component/NavBar";
 import Link from "next/link";

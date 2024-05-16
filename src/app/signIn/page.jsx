@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import react, { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import BackgroundVideo from "../../components/component/BackgroundVideo";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -14,53 +14,8 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const baseUrl = "http://localhost:3000/users";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Set loading state when form is submitted
-
-    try {
-      const response = await fetch(baseUrl);
-      const users = await response.json();
-
-      const existingUser = users.find((user) => user.userName === userName);
-
-      if (existingUser) {
-        if (existingUser.password === password) {
-          const sessionToken = "your-session-token";
-          Cookies.set("sessionToken", sessionToken, { expires: 1, path: "/" });
-          setSuccess(true);
-          setTimeout(() => {
-            setSuccess(false);
-          }, 5000);
-          router.push("/dashboard");
-        } else {
-          setError("Incorrect username or password"); // More specific error message
-        }
-      } else {
-        setError("Account not found"); // More specific error message
-      }
-    } catch (error) {
-      console.error("Error logging in:", error);
-      setError("An error occurred while logging in");
-    } finally {
-      setLoading(false); // Reset loading state after form submission
-    }
-  };
-
-  // Use effect to clear error and success messages after a certain time
-  useEffect(() => {
-    let timeout;
-    if (error || success) {
-      timeout = setTimeout(() => {
-        setError("");
-        setSuccess(false);
-      }, 5000);
-    }
-    return () => clearTimeout(timeout);
-  }, [error, success]);
+  // const handleSubmit = async (e) => {};
 
   return (
     <div className="relative h-screen">

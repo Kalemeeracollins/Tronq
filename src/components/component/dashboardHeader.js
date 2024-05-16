@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import Modal from './modal';
+import Modal from './Modal';
 import Image from "next/image"
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import NavBar from "../../components/component/NavBar";
 import Modal from "../../components/component/Modal";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 function Transctions() {
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
